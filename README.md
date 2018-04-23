@@ -1,12 +1,10 @@
 # indexed-filter
 
-[![NPM version](https://img.shields.io/npm/v/indexed-filter.svg)](https://www.npmjs.org/package/indexed-filter)
-[![Bower version](https://img.shields.io/bower/v/indexed-filter.svg)](https://github.com/shinnn/indexed-filter/releases)
+[![npm version](https://img.shields.io/npm/v/indexed-filter.svg)](https://www.npmjs.com/package/indexed-filter)
 [![Build Status](https://travis-ci.org/shinnn/indexed-filter.svg?branch=master)](https://travis-ci.org/shinnn/indexed-filter)
-[![Coverage Status](https://img.shields.io/coveralls/shinnn/indexed-filter.svg)](https://coveralls.io/r/shinnn/indexed-filter)
-[![devDependency Status](https://david-dm.org/shinnn/indexed-filter/dev-status.svg)](https://david-dm.org/shinnn/indexed-filter#info=devDependencies)
+[![Coverage Status](https://img.shields.io/coveralls/shinnn/indexed-filter.svg)](https://coveralls.io/github/shinnn/indexed-filter)
 
-[`Array#filter`](https://es5.github.io/#x15.4.4.20) with also detecting indexes of filtered values
+[`Array#filter`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) with also detecting indexes of filtered values
 
 ```javascript
 const arr = [1, 'foo', 2, 'bar'];
@@ -20,31 +18,23 @@ indexedFilter(arr, v => typeof v === 'string');
 
 ## Installation
 
-### Package managers
-
-#### [npm](https://www.npmjs.com/)
+[Use](https://docs.npmjs.com/cli/install) [npm](https://docs.npmjs.com/getting-started/what-is-npm).
 
 ```
 npm install indexed-filter
 ```
 
-#### [Bower](http://bower.io/) 
-
-```
-bower install indexed-filter
-```
-
-### Standalone
-
-[Download the script file directly.](https://raw.githubusercontent.com/shinnn/indexed-filter/master/browser.js "view raw")
-
 ## API
+
+```javascript
+import indexedFilter from 'indexed-filter';
+```
 
 ### indexedFilter(*array*, *filterFn* [, *thisObject*])
 
 *array*: `Array`  
 *filterFn*: `Function`  
-*thisObject*: (Any value)  
+*thisObject*: (any value)  
 Return: `Array`
 
 The API is vely similar to ECMAScript's built-in [`Array#filter`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter). There are only two differences:
@@ -61,6 +51,6 @@ indexedFilter([0, [1], [2], '3', [5]], function(val, index, arr) {
 
 ## License
 
-Copyright (c) 2015 - 2016 [Shinnosuke Watanabe](https://github.com/shinnn)
+Copyright (c) 2015 - 2018 [Shinnosuke Watanabe](https://github.com/shinnn)
 
 Licensed under [the MIT License](./LICENSE).
