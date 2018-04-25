@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/shinnn/indexed-filter.svg?branch=master)](https://travis-ci.org/shinnn/indexed-filter)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/indexed-filter.svg)](https://coveralls.io/github/shinnn/indexed-filter)
 
-[`Array#filter`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) with also detecting indexes of filtered values
+[`Array#filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) with also appending indexes of filtered values to the result
 
 ```javascript
 const arr = [1, 'foo', 2, 'bar'];
@@ -37,10 +37,10 @@ import indexedFilter from 'indexed-filter';
 *thisObject*: (any value)  
 Return: `Array`
 
-The API is vely similar to ECMAScript's built-in [`Array#filter`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter). There are only two differences:
+The API is very similar to [`Array.prototype.filter()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/filter). There are only two differences:
 
 * You pass in the array as the first argument instead of calling the `.filter()` method on the array instance.
-* Each filtered result is an object with tow properties, `index` (array index) and `value` (array element).
+* Each filtered result is an object with tow properties, `index` (array index integer) and `value` (array element).
 
 ```javascript
 indexedFilter([0, [1], [2], '3', [5]], function(val, index, arr) {

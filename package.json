@@ -1,18 +1,21 @@
 {
 	"name": "indexed-filter",
 	"version": "1.0.1",
-	"description": "Array#filter with also detecting indexes of filtered values",
-	"scripts": {
-		"pretest": "eslint --config @shinnn browser.js index.js test.js",
-		"test": "node --strong_mode --throw-deprecation --track-heap-objects test.js",
-		"coverage": "node --strong_mode node_modules/.bin/istanbul cover test.js"
-	},
-	"author": "Shinnosuke Watanabe <snnskwtnb@gmail.com> (https://github.com/shinnn)",
+	"description": "Array#filter() with also detecting indexes of filtered values",
 	"repository": "shinnn/indexed-filter",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"scripts": {
+		"prebuild": "eslint --fix --format=codeframe index.mjs test.js",
+		"build": "rollup --config=node:module",
+		"pretest": "npm run-script build",
+		"test": "nyc --reporter=html --reporter=text node test.js"
+	},
 	"license": "MIT",
 	"files": [
-		"index.js"
+		"index.js",
+		"index.mjs"
 	],
+	"module": "index.mjs",
 	"keywords": [
 		"arr",
 		"array",
@@ -26,9 +29,14 @@
 		"browser"
 	],
 	"devDependencies": {
-		"@shinnn/eslint-config": "^2.0.1",
-		"eslint": "^2.3.0",
-		"istanbul": "^0.4.2",
-		"tape": "^4.5.1"
+		"@shinnn/eslint-config": "^5.4.0",
+		"eslint": "^4.19.1",
+		"nyc": "^11.7.1",
+		"rollup": "^0.58.2",
+		"rollup-config-module": "^2.0.0",
+		"tape": "^4.9.0"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn"
 	}
 }

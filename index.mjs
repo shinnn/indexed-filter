@@ -1,10 +1,8 @@
-'use strict';
-
 /*!
  * indexed-filter | MIT (c) Shinnosuke Watanabe
  * https://github.com/shinnn/indexed-filter
 */
-function indexedFilter(arr, fn, thisObj) {
+export default function indexedFilter(arr, fn, thisObj) {
 	if (!Array.isArray(arr)) {
 		throw new TypeError(String(arr) + ' is not an array. Expected an array to be filtered.');
 	}
@@ -26,5 +24,3 @@ function indexedFilter(arr, fn, thisObj) {
 
 	return results;
 }
-
-module.exports = indexedFilter;
