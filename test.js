@@ -20,14 +20,14 @@ test('indexedFilter()', t => {
 
 	t.throws(
 		() => indexedFilter(1, () => {}),
-		/TypeError.*1 is not an array\. Expected an array to be filtered\./,
-		'should have a function name.'
+		/TypeError.*Expected an array to be filtered, but got a non-array value 1 \(number\)\./,
+		'should invalidate a non-array first argument.'
 	);
 
 	t.throws(
 		() => indexedFilter([], 1),
-		/TypeError.*1 is not a function\. Expected a filter function that returns Boolean value\./,
-		'should hadsfdfdfve a function name.'
+		/TypeError.*Expected a filter function, but got a non-function value 1 \(number\)\./,
+		'should invalidate a non-function second argument.'
 	);
 
 	t.end();

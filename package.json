@@ -28,6 +28,9 @@
 		"client-side",
 		"browser"
 	],
+	"dependencies": {
+		"append-type": "^1.0.1"
+	},
 	"devDependencies": {
 		"@shinnn/eslint-config": "^5.4.0",
 		"eslint": "^4.19.1",
